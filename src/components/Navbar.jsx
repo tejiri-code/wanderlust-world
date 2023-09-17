@@ -1,40 +1,56 @@
 import React from "react";
-import { Link } from "react-router-dom"; // If using React Router for navigation
 
 const Navbar = () => {
+    const headingStyle = {
+        fontFamily: "Dancing Script, sans-serif", // Replace "Roboto" with the actual font name
+        
+      };
   return (
-    <nav className="bg-blue-500 p-4">
+    <nav className="bg-gray-900 text-white py-4 relative">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-2xl font-bold">
-          Wanderlust World
-        </Link>
-
-        <div className="space-x-4">
-          <Link
-            to="/destinations"
-            className="text-white hover:underline hover:text-blue-300 transition duration-300"
-          >
-            Destinations
-          </Link>
-          <Link
-            to="/about"
-            className="text-white hover:underline hover:text-blue-300 transition duration-300"
-          >
-            About Us
-          </Link>
-          <Link
-            to="/blog"
-            className="text-white hover:underline hover:text-blue-300 transition duration-300"
-          >
-            Blog
-          </Link>
-          <Link
-            to="/faq"
-            className="text-white hover:underline hover:text-blue-300 transition duration-300"
-          >
-            FAQ
-          </Link>
-        </div>
+        <h1 style={headingStyle} className="text-2xl font-semibold">Wanderlust World</h1>
+        <ul className="flex space-x-6">
+          <li>
+            <a
+              href="#home"
+              className="hover:text-purple-400 transition duration-300"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#destinations"
+              className="hover:text-purple-400 transition duration-300"
+            >
+              Destinations
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              className="hover:text-purple-400 transition duration-300"
+            >
+              About Us
+            </a>
+          </li>
+          <li>
+            <a
+              href="#blog"
+              className="hover:text-purple-400 transition duration-300"
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="hover:text-purple-400 transition duration-300"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   );
