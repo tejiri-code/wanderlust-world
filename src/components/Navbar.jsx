@@ -6,7 +6,7 @@ const Navbar = () => {
         
       };
   return (
-    <nav className="bg-gray-900 text-white py-4 relative">
+    <nav className="bg-gradient-to-r from-gray-900 to-purple-500 text-white py-4 relative">
       <div className="container mx-auto flex justify-between items-center">
         <h1 style={headingStyle} className="text-2xl font-semibold">Wanderlust World</h1>
         <ul className="flex space-x-2">
