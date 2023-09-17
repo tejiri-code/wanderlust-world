@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gradient-to-r from-gray-900 to-purple-500  text-white py-4">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 style={headingStyle}  className="text-2xl font-semibold p-2">W</h1>
+        <h1 style={headingStyle}  className="text-2xl font-semibold p-2 hidden md:block">W</h1>
         {/* Mobile Menu Toggle Button */}
         <button
           onClick={toggleMobileMenu}
@@ -36,7 +36,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="DestinationList.jsx"
+              href="/DestinationList.jsx"
               className="hover:text-purple-900 transition duration-300"
             >
               Destinations
@@ -69,7 +69,7 @@ const Navbar = () => {
         </ul>
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden  absolute top-0 left bg-gray-900 text-white p-3 py-4 h-50">
+          <div className="lg:hidden  absolute top-10 left bg-gray-900 text-white p-3 py-4 h-50 rounded-md ">
             <ul className="space-y-2">
               <li>
                 <a href="#home" className="hover:text-purple-900 transition duration-300 block">

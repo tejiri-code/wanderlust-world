@@ -6,6 +6,8 @@ const DestinationList = () => {
   const [destinations, setDestinations] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedRegion, setSelectedRegion] = useState("All"); // Filter by region
+  const [sortBy, setSortBy] = useState("popularity"); // Sort by popularity or other criteria
 
   useEffect(() => {
     // Fetch destination information
@@ -31,14 +33,44 @@ const DestinationList = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
+  const filterDestinationsByRegion = (region) => {
+    setSelectedRegion(region);
+  };
+
+  const sortDestinations = (criteria) => {
+    setSortBy(criteria);
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
+
+  // Filter destinations based on the selected region
+  const filteredDestinations = selectedRegion === "All"
+    ? destinations
+    : destinations.filter((destination) => destination.region === selectedRegion);
+
+  // Sort destinations based on the selected criteria
+  const sortedDestinations = [...filteredDestinations].sort((a, b) => {
+    if (sortBy === "popularity") {
+      return b.popularity - a.popularity;
+    }
+    // Add more sorting criteria as needed
+    return 0;
+  });
 
   return (
     <section>
       <h2 className="text-3xl font-semibold text-center">Popular Destinations</h2>
 
+      {/* Filtering and Sorting Buttons */}
+      <div className="flex justify-center space-x-4 mt-4">
+        <button onClick={() => filterDestinationsByRegion("All")}>All</button>
+        <button onClick={() => filterDestinationsByRegion("Europe")}>Europe</button>
+        <button onClick={() => filterDestinationsByRegion("Asia")}>Asia</button>
+        <button onClick={() => sortDestinations("popularity")}>Sort by Popularity</button>
+        <button onClick={() => sortDestinations("price")}>Sort by Price</button>
+      </div>
       <div className="relative">
         <div className="flex items-center justify-between mb-4">
           <MdChevronLeft
