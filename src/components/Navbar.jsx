@@ -69,30 +69,30 @@ const Navbar = () => {
         </ul>
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-0 left bg-gray-900 text-white p-3 py-4 h-80">
+          <div className="lg:hidden  absolute top-0 left bg-gray-900 text-white p-3 py-4 h-50">
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="hover:text-blue-400 transition duration-300 block">
+                <a href="#home" className="hover:text-purple-900 transition duration-300 block">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#destinations" className="hover:text-blue-400 transition duration-300 block">
+                <a href="#destinations" className="hover:text-purple-900 transition duration-300 block">
                   Destinations
                 </a>
               </li>
               <li>
-                <a href="#about" className="hover:text-blue-400 transition duration-300 block">
+                <a href="#about" className="hover:text-purple-900 transition duration-300 block">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#blog" className="hover:text-blue-400 transition duration-300 block">
+                <a href="#blog" className="hover:text-purple-900 transition duration-300 block">
                   Blog
                 </a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-blue-400 transition duration-300 block">
+                <a href="#contact" className="hover:text-purple-900 transition duration-300 block">
                   Contact
                 </a>
               </li>
